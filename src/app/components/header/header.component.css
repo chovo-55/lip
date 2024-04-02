@@ -1,0 +1,117 @@
+/* top headers */
+.top-header {
+  padding-left: 90px;
+  padding-right: 10px;
+  height: 20vh;
+  width: 100vw;
+  margin-bottom: 30px;
+}
+
+.left-header-wrapper {
+  width: 70%;
+  display: flex;
+  align-items: center; /* Added this line to center items vertically */
+  position: relative; /* Make sure position is not 'static' */
+  z-index: 1; /* Any number greater than the z-index of the navbar */
+  float: left;
+  padding: 20px;
+  margin-top: 40px;
+}
+
+.right-header-wrapper {
+  width: 20%;
+  margin-top: 75px;
+
+  text-align: right;
+  position: relative; /* Make sure position is not 'static' */
+  z-index: 1; /* Any number greater than the z-index of the navbar */
+  float: left;
+  padding: 20px;
+  margin-left: 10%;
+}
+
+.erb {
+  width: calc(60px + 3vw); /* Increase the width */
+  height: auto; /* Maintain aspect ratio */
+  margin-bottom: 10px;
+  display: inline-block;
+}
+
+
+.left-header-text {
+  margin-left: 30px;
+  display: inline-block;
+}
+
+.left-header-img {
+  display: inline-block;
+}
+
+.kec-lip-text {
+  display: inline-block;
+  font-family: 'Playfair Display', serif;
+  font-size: calc(10px + 1.8vw);
+  line-height: normal;
+}
+
+.web-str-text {
+  font-family: 'Playfair Display', serif;
+  font-size: calc(7px + 1vw);
+  font-weight: 10;
+  line-height: normal;
+  color: #EF865B;
+
+}
+
+/* right header */
+.right-header {
+  display: inline-block;
+  position: absolute;
+  right: 0;
+}
+
+.right-header-fb {
+  width: 25px;
+  height: 25px;
+}
+
+.right-header-phone, .right-header-mail {
+  display: block;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6vh;
+  font-weight: 10;
+  line-height: normal;
+}
+
+.right-header-phone:hover, .right-header-mail:hover, .right-header-fb:hover {
+  transition: transform 0.4s;
+  transform: translateY(-5px);
+}
+
+/* mobile versions */
+
+@media screen and (max-width: 1280px) {
+
+  .right-header-wrapper {
+    display: none
+  }
+
+  .left-header-wrapper {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0px 0px 0px 0px;
+    margin: 30px 0px 0px 0px;
+  }
+
+  .top-header {
+    padding-left: 0px;
+    padding-right: 0px;
+    height: 20vh;
+    width: 100vw;
+  }
+
+}

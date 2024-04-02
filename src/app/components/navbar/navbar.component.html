@@ -1,0 +1,189 @@
+<!-- TODO:
+PC
+  - prekliky na stranky
+
+Mobil
+  - zmena navbaru pre mobil
+  - stylovat dropdov pre mobil
+  - prekliky pri mobilnom menu zobrazeni
+-->
+
+<hr class="line">
+<nav>
+  <ul class="mainnavbar">
+
+    <li class="hideOnMobile">
+      <a href="oznamy">Oznamy</a></li>
+
+    <li class="hideOnMobile" (click)="toggleOpenDokumenty()">
+      <a [class.active]="isDroppedDokumenty">Dokumenty
+        <svg *ngIf="!isDroppedDokumenty" xmlns="http://www.w3.org/2000/svg" height="32" viewBox="0 -960 960 960"
+             width="32">
+          <path d="M480-352 263-567h434L480-352Z"/>
+        </svg>
+        <svg *ngIf="isDroppedDokumenty" xmlns="http://www.w3.org/2000/svg" height="32" viewBox="0 -960 960 960"
+             width="32">
+          <path d="m263-393 217-217 217 217H263Z"/>
+        </svg>
+      </a>
+    </li>
+
+    <li class="hideOnMobile" (click)="toggleOpenObecne()">
+      <a [class.active]="isDroppedObecne">Obecné zastupiteľstvo
+        <svg *ngIf="!isDroppedObecne" xmlns="http://www.w3.org/2000/svg" height="32" viewBox="0 -960 960 960"
+             width="32">
+          <path d="M480-352 263-567h434L480-352Z"/>
+        </svg>
+        <svg *ngIf="isDroppedObecne" xmlns="http://www.w3.org/2000/svg" height="32" viewBox="0 -960 960 960" width="32">
+          <path
+            d="m263-393 217-217 217 217H263Z"/>
+        </svg>
+      </a>
+    </li>
+
+    <li class="hideOnMobile">
+      <a href="novinky">Novinky</a></li>
+
+    <li class="hideOnMobile" (click)="toggleOpenAkcie()">
+      <a [class.active]="isDroppedAkcie">Akcie
+        <svg *ngIf="!isDroppedAkcie" xmlns="http://www.w3.org/2000/svg" height="32" viewBox="0 -960 960 960"
+             width="32">
+          <path d="M480-352 263-567h434L480-352Z"/>
+        </svg>
+        <svg *ngIf="isDroppedAkcie" xmlns="http://www.w3.org/2000/svg" height="32" viewBox="0 -960 960 960" width="32">
+          <path
+            d="m263-393 217-217 217 217H263Z"/>
+        </svg>
+      </a>
+    </li>
+  </ul>
+  <div class="dokumenty">
+    <ul class="dropdown" *ngIf="isDroppedDokumenty">
+      <li><a routerLink="/Hlavný_Kontrolor">Hlavný kontrolór</a></li>
+      <li><a routerLink="/VZN_obce_a_smernice">VZN obce a smernice</a></li>
+      <li><a routerLink="/Zmluvy">Zmluvy</a></li>
+      <li><a routerLink="/Majetkové_priznania_verejných_funkcionárov">Majetkové priznania verejných funkcionárov</a>
+      </li>
+    </ul>
+
+    <ul class="dropdown" *ngIf="isDroppedDokumenty">
+      <li><a routerLink="/Pozvánky_na_obecné_zastupiteľstvo">Pozvánky na obecné zastupiteľstvo</a></li>
+      <li><a routerLink="/Správa_auditora">Správa auditora</a></li>
+      <li><a routerLink="/Tlačivá">Tlačivá a formuláre</a></li>
+    </ul>
+
+    <ul class="dropdown" *ngIf="isDroppedDokumenty">
+      <li><a routerLink="/Územny_plán">Územny plán</a></li>
+      <li><a routerLink="/Komunitný_plán_obce">Komunitný plán obce</a></li>
+      <li><a routerLink="/Rozpočet_a_záverečný_účet_obce">Rozpočet a záverečný účet obce</a></li>
+    </ul>
+  </div>
+
+  <div class="obecne">
+    <ul class="dropdown-obecne" *ngIf="isDroppedObecne">
+      <li><a routerLink="/Poslanci_obecného_zastupiteľstva">Poslanci obecného zastupiteľstva</a></li>
+    </ul>
+    <ul class="dropdown-obecne" *ngIf="isDroppedObecne">
+      <li><a routerLink="/Komisie">Komisie</a></li>
+    </ul>
+    <ul class="dropdown-obecne" *ngIf="isDroppedObecne">
+      <li><a routerLink="/Zápisnice">Zápisnice</a></li>
+    </ul>
+  </div>
+
+  <div class="akcie">
+    <ul class="dropdown-akcie" *ngIf="isDroppedAkcie">
+      <li><a routerLink="/2022">2022</a></li>
+    </ul>
+    <ul class="dropdown-akcie" *ngIf="isDroppedAkcie">
+      <li><a routerLink="/2023">2023</a></li>
+    </ul>
+    <ul class="dropdown-akcie" *ngIf="isDroppedAkcie">
+      <li><a routerLink="/2024">2024</a></li>
+    </ul>
+  </div>
+
+  <div class="brgr" [class.open]="isOpened">
+    <a (click)="toggleNavbar()" class="burgerMenuOpen">
+      <svg *ngIf="!isOpened" xmlns="http://www.w3.org/2000/svg" height="35"
+           viewBox="0 -960 960 960"
+           width="35">
+        <path
+          d="M140-260v-54h680v54H140Zm0-194v-54h680v54H140Zm0-194v-54h680v54H140Z"/>
+      </svg>
+      <svg *ngIf="isOpened" xmlns="http://www.w3.org/2000/svg" height="35" viewBox="0 -960 960 960" width="35">
+        <path d="m247-195-51-52 233-233-233-234 51-52 234 234 232-234 51 52-232 234 232 233-51 52-232-234-234 234Z"/>
+      </svg>
+    </a>
+  </div>
+
+  <div class="overlay" *ngIf="isOpened" (click)="toggleNavbar()"></div>
+
+  <ul class="sidenavbar" [class.open]="isOpened">
+    <li (click)="toggleOpenDokumentyM()">
+      <a>Dokumenty</a>
+      <ul *ngIf="isDroppedDokumentyM">
+        <li><a>Submenu Item 1</a></li>
+        <li><a>Submenu Item 2</a></li>
+      </ul>
+    </li>
+
+    <li><a>Oznamy</a></li>
+
+    <li (click)="toggleOpenObecneM()">
+      <a>Obecné zastupiteľstvo</a>
+      <ul *ngIf="isDroppedObecneM">
+        <li><a>Submenu Item 1</a></li>
+        <li><a>Submenu Item 2</a></li>
+      </ul>
+    </li>
+
+    <li><a>Novinky</a></li>
+
+    <li (click)="toggleOpenAkcieM()">
+      <a>Akcie</a>
+      <ul *ngIf="isDroppedAkcieM">
+        <li><a>Submenu Item 1</a></li>
+        <li><a>Submenu Item 2</a></li>
+      </ul>
+    </li>
+  </ul>
+
+</nav>
+
+<!--<div style="margin-top: 50px;">-->
+<!--  <h1>asdasd</h1>-->
+<!--  <h1>asdasd</h1>-->
+<!--  <h1>asdasd</h1>-->
+<!--  <h1>asdasd</h1>-->
+<!--  <h1>asdasd</h1>-->
+<!--  <h1>asdasd</h1>-->
+<!--  <h1>asdasd</h1>-->
+<!--  <h1>asdasd</h1>-->
+<!--  <h1>asdasd</h1>-->
+<!--  <h1>asdasd</h1>-->
+<!--  <h1>asdasd</h1>-->
+<!--  <h1>asdasd</h1>-->
+<!--  <h1>asdasd</h1>-->
+<!--  <h1>asdasd</h1>-->
+<!--  <h1>asdasd</h1>-->
+<!--  <h1>asdasd</h1>-->
+<!--  <h1>asdasd</h1>-->
+<!--  <h1>asdasd</h1>-->
+<!--  <h1>asdasd</h1>-->
+<!--  <h1>asdasd</h1>-->
+<!--  <h1>asdasd</h1>-->
+<!--  <h1>asdasd</h1>-->
+<!--  <h1>asdasd</h1>-->
+<!--  <h1>asdasd</h1>-->
+<!--  <h1>asdasd</h1>-->
+<!--  <h1>asdasd</h1>-->
+<!--  <h1>asdasd</h1>-->
+<!--  <h1>asdasd</h1>-->
+<!--  <h1>asdasd</h1>-->
+<!--  <h1>asdasd</h1>-->
+<!--  <h1>asdasd</h1>-->
+<!--  <h1>asdasd</h1>-->
+<!--  <h1>asdasd</h1>-->
+<!--  <h1>asdasd</h1>-->
+<!--</div>-->

@@ -1,0 +1,192 @@
+.cont {
+  width: 100vw;
+  height: 100vh;
+
+  position: relative;
+
+  text-align: center;
+  color: white;
+  transition: transform 2s; /* Adjust this duration to your preference */
+
+}
+
+.hide {
+  transition: height 0.5s, opacity 0.5s;
+  height: 0;
+  opacity: 0;
+  overflow: hidden;
+}
+
+
+.welcome-image {
+  width: 100vw;
+  height: 100vh;
+
+  object-fit: cover;
+}
+
+.wlcm-txt {
+  top: 50vh;
+  left: 50vw;
+
+  width: 100vw;
+  position: absolute;
+
+  transform: translate(-50%, -50%);
+  display: inline-block;
+
+  animation: fadeIn ease-in-out 1s forwards;
+}
+
+.kecerovsky, .lipovec {
+  font-size: clamp(2.4rem, 4vw, 4rem);
+  position: relative;
+  font-family: 'Playfair Display', serif;
+  line-height: normal;
+  display: inline-block;
+}
+
+.line1 {
+  width: clamp(17rem, 25vw, 30rem);
+
+  height: 0.4vh;
+
+  margin: 0 auto; /* This centers the line */
+  margin-bottom: 15px;
+
+  border-radius: 50px;
+  display: block; /* Make hr behave like a block element */
+  background: #ffffff;
+  opacity: 1;
+
+  animation: lineAppearRight ease-in-out 1s forwards;
+
+}
+
+.line2 {
+  width: clamp(15rem, 25vw, 28rem);
+  height: 0.4vh;
+
+  margin: 0 auto; /* This centers the line */
+  margin-top: 15px;
+
+  border-radius: 50px;
+  display: block; /* Make hr behave like a block element */
+  background: #ffffff;
+  opacity: 1;
+
+  animation: lineAppearLeft ease-in-out 1s forwards;
+
+}
+
+.info-text {
+  margin-top: 15px;
+  position: relative;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4vw;
+  font-weight: 10;
+  line-height: normal;
+  display: inline-block;
+}
+
+.nav-to-page {
+  bottom: 0;
+
+  position: relative;
+  display: inline-block;
+}
+
+.fading-bottom {
+  bottom: 0;
+  height: 130px;
+
+  width: 100vw;
+
+  position: absolute;
+
+  background: rgb(0, 0, 0);
+  background: linear-gradient(0deg,
+  rgba(0, 0, 0, 1) 0%,
+  rgba(3, 3, 3, 1) 12%,
+  rgba(3, 3, 3, 0.95) 23%,
+  rgba(3, 2, 2, 0.9) 33%,
+  rgba(3, 2, 2, 0.85) 45%,
+  rgba(3, 2, 2, 0.8) 52%,
+  rgba(3, 2, 2, 0.7) 62%,
+  rgba(3, 2, 2, 0.6) 73%,
+  rgba(3, 2, 2, 0.5) 80%,
+  rgba(3, 2, 2, 0.4) 86%,
+  rgba(3, 2, 2, 0.3) 90%,
+  rgba(3, 2, 2, 0.2) 94%,
+  rgba(3, 2, 2, 0.1) 97%,
+  rgba(3, 2, 2, 0) 100%);
+}
+
+.nav-text {
+  display: inline-block;
+
+  cursor: pointer;
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(0.7rem, 12vh, 1.3rem);
+  font-weight: 10;
+  line-height: normal;
+  transition: transform 0.6s;
+  margin-top: clamp(50px, 25vh, 55px); /* Add this line */
+
+  animation: fadeIn ease-in 1s 1.5s forwards;
+  opacity: 0;
+}
+
+
+.nav-text:hover {
+  transform: translateY(-15px);
+}
+
+
+@media screen and (min-height: 0px) and (max-height: 940px) {
+  .nav-text {
+    margin-top: clamp(50px, 25vh, 70px); /* Add this line */
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+
+@keyframes lineAppearRight {
+  from {
+    width: 0;
+    right: 50%;
+  }
+  to {
+    width: clamp(17rem, 25vw, 30rem);
+    right: auto;
+  }
+}
+
+@keyframes lineAppearLeft {
+  from {
+    width: 0;
+    left: 50%;
+  }
+  to {
+    width: clamp(15rem, 25vw, 28rem);
+    left: auto;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

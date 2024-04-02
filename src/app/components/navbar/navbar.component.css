@@ -1,0 +1,279 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/*nav {*/
+/*  margin-top: 30px;*/
+/*  position: sticky;*/
+/*  top: 0;*/
+/*  z-index: 1;*/
+/*}*/
+
+.akcie {
+  width: 70vw;
+  position: absolute; /* Add this */
+
+  margin-left: 15vw;
+  border-radius: 0px 0px 15px 15px;
+  background-color: white;
+  font-family: 'Playfair Display', serif;
+  font-weight: normal;
+  font-size: calc(1.9px + 0.9vw);
+  display: grid;
+  grid-template-columns: 4fr 3fr 3fr;
+  gap: 10px;
+  justify-content: center;
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);
+}
+
+.dropdown-akcie {
+  margin-left: 40%;
+  margin-bottom: 12px;
+  margin-top: 22px;
+  display: inline-block;
+  position: relative; /* Add this */
+
+}
+
+.obecne {
+  width: 70vw;
+  position: absolute; /* Add this */
+
+  margin-left: 15vw;
+  border-radius: 0px 0px 15px 15px;
+  background-color: white;
+  font-family: 'Playfair Display', serif;
+  font-weight: normal;
+  font-size: calc(1.9px + 0.9vw);
+  display: grid;
+  grid-template-columns: 4fr 3fr 3fr;
+  gap: 10px;
+  justify-content: center;
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);
+}
+
+.dropdown-obecne {
+  margin-left: 30%;
+  margin-bottom: 12px;
+  margin-top: 22px;
+  cursor: pointer;
+  position: relative; /* Add this */
+
+}
+
+.dokumenty {
+  position: absolute; /* Add this */
+  width: 70vw;
+  margin-left: 15vw;
+  border-radius: 0px 0px 15px 15px;
+  background-color: white;
+  font-family: 'Playfair Display', serif;
+  font-weight: normal;
+  font-size: calc(1.9px + 0.9vw);
+  display: grid;
+  grid-template-columns: 4fr 3fr 3fr;
+  gap: 10px;
+  justify-content: center;
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);
+}
+
+.dropdown {
+  position: relative; /* Add this */
+  width: 100%; /* Add this to maintain the width */
+  margin-left: 12%;
+  margin-bottom: 12px;
+  margin-top: 22px;
+  cursor: pointer;
+}
+
+.dropdown li a, .dropdown-obecne li a, .akcie li a {
+  text-decoration: none;
+  color: black;
+  font-family: 'Playfair Display', serif;
+  font-weight: normal;
+  font-size: calc(1.9px + 0.9vw);
+}
+
+.dropdown li {
+  list-style-type: none;
+  padding-bottom: 15px;
+  cursor: pointer;
+}
+
+.dropdown-obecne li {
+  list-style-type: none;
+  padding-bottom: 15px;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.dropdown-akcie li {
+  list-style-type: none;
+  padding-bottom: 15px;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.mainnavbar {
+  width: 100vw;
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.mainnavbar {
+  margin-top: 10px;
+  height: 70px;
+  background-color: #ffffff;
+  box-shadow: 0px 4px 3px #dfdfdf;
+  text-align: center;
+}
+
+.mainnavbar li {
+  height: 50px;
+  padding-top: 10px;
+}
+
+.mainnavbar a {
+  text-decoration: none;
+  cursor: pointer;
+  color: black;
+  font-family: 'Playfair Display', serif;
+  font-weight: normal;
+  font-size: calc(2px + 1vw);
+}
+
+.mainnavbar li a {
+  position: relative;
+  display: inline-block;
+}
+
+.mainnavbar li a::before {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 50%;
+  background: #EF865B; /* Change this to the color you want for the underline */
+  visibility: hidden;
+  transition: all 0.3s ease-in-out;
+  transform: translateX(-50%);
+}
+
+.mainnavbar li a:hover::before,
+.mainnavbar li a.active::before {
+  visibility: visible;
+  width: 100%;
+}
+
+.brgr {
+  position: fixed; /* Added this line */
+  z-index: 10000; /* Added this line */
+  margin-top: 20px;
+  margin-left: 94vw;
+  cursor: pointer;
+}
+
+.brgr.open {
+  top: 0; /* Position at the very top when the sidebar is open */
+  right: 10px; /* Position at the very right when the sidebar is open */
+}
+
+.overlay {
+  content: "";
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: black;
+  opacity: .5;
+  z-index: 9998;
+}
+
+.overlay.open {
+  display: block;
+}
+
+.sidenavbar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 100vw;
+  z-index: 9999;
+  background-color: #EF865B;
+  display: none;
+  flex-direction: column;
+  justify-content: center; /* Added this line */
+  align-items: center; /* Added this line */
+  transition: transform 0.3s ease-out;
+  transform: translateX(100%);
+}
+
+.sidenavbar li, a {
+  width: 100%;
+  font-size: 1.7em; /* Added this line */
+  text-align: center; /* Added this line */
+  margin-bottom: 30px;
+}
+
+.sidenavbar li ul {
+  display: none;
+  flex-direction: column;
+  padding-left: 20px; /* Indent submenu items */
+}
+
+.sidenavbar li.ng-star-inserted ul {
+  display: flex;
+}
+
+.sidenavbar.open {
+  display: flex;
+  transform: translateX(0);
+}
+
+.line {
+  margin-top: 40px;
+  width: 96vw;
+  height: 2px;
+  margin-left: 2vw;
+  background-color: #EF865B;
+  opacity: 0.5;
+}
+
+@media (max-width: 1800px) {
+  .mainnavbar a {
+    font-size: calc(2px + 1.2vw);
+  }
+}
+
+@media (max-width: 1500px) {
+  .mainnavbar a {
+    font-size: calc(2px + 1.3vw);
+  }
+}
+
+@media (max-width: 1000px) {
+  .mainnavbar {
+    display: none;
+  }
+
+  .burgerMenuOpen {
+    display: flex;
+  }
+}
+
+@media (min-width: 1001px) {
+  .mainnavbar {
+    display: flex;
+  }
+
+  .burgerMenuOpen {
+    display: none;
+  }
+}

@@ -1,0 +1,23 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<div class="cont" [ngClass]="{'hide': !isVisible}">
+  <img class="welcome-image" src="../../../assets/images/welcome-screen.png"/>
+  <div class="wlcm-txt">
+    <div class="kecerovsky">
+      <hr class="line1"> <!-- line above Kecerovský -->
+      Kecerovský
+    </div>
+    <br>
+    <div class="lipovec">
+      Lipovec
+      <hr class="line2"> <!-- line under Lipovec -->
+    </div>
+  </div>
+  <div class="fading-bottom">
+    <div class="nav-text" (click)="navigateToWebOnClick()">
+      Prejsť na stránku
+      <div class="nav-arrow">
+        ↓
+      </div>
+    </div>
+  </div>
+</div>

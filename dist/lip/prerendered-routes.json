@@ -1,0 +1,20 @@
+{
+  "routes": [
+    "/2022",
+    "/2023",
+    "/2024",
+    "/Hlavný_Kontrolor",
+    "/Komisie",
+    "/Komunitný_plán_obce",
+    "/Majetkové_priznania_verejných_funkcionárov",
+    "/Poslanci_obecného_zastupiteľstva",
+    "/Pozvánky_na_obecné_zastupiteľstvo",
+    "/Rozpočet_a_záverečný_účet_obce",
+    "/Správa_auditora",
+    "/Tlačivá",
+    "/Územny_plán",
+    "/VZN_obce_a_smernice",
+    "/Zápisnice",
+    "/Zmluvy"
+  ]
+}
